@@ -1,3 +1,3 @@
 [submodule "themes/zola-private-dev-blog"]
 	path = themes/zola-private-dev-blog
-	url = git@github.com:nickzana/zola-private-dev-blog
+	url = https://git.nickzana.dev/nick/zola-private-dev-blog.git
