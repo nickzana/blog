@@ -1,9 +1,8 @@
 +++
 title = "Adding FreshRSS to NetNewsWire"
 [taxonomies]
-tags = [ "rss", "privacy" ]
+tags = [ "rss", "privacy", "howto" ]
 +++
-
 
 A pain point that I have always had with RSS is syncing my feeds and read
 status between devices. There are various solutions out there;
