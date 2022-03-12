@@ -1,6 +1,6 @@
 +++
 title = "Bamboo Media Server"
-weight = 1
+weight = 3
 [taxonomies]
 tags = []
 +++

@@ -23,7 +23,7 @@ through social engineering, access to a phone number, or an email.
 
 In this post, I'll be talking about the password managers I've used and
 recommend. Then, I'll outline the properties a good password manager should
-have. Finally, I'll show you the solution I've settled on for my own needs.
+have. Finally, I'll introduce a project I've been working on related to this.
 
 As a small disclaimer, I'm not a cryptographer. My formal training essentially
 boils down to a few first-year intro to CS classes in I took this year in
@@ -232,8 +232,11 @@ collectively agree to access your password manager. Changing the number and
 trustworthiness of those parties can help you adjust that ratio of "resiliency
 against loss" to "abuse by trusted parties."
 
-## Perfect Password Management
+## Can we do better?
 
-## Potential Improvements
+Rather than sticking with established options, I've decided to start working on
+my own password manager, [`ciphey`](/projects/ciphey). The goal is to explore
+what cryptography exists out there that can meet the properties listed above in
+a simple and understandable manner.
 
-### Better Secret Sharing
+The project is still in its exploratory stages, so any feedback is welcome!

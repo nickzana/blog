@@ -1,6 +1,6 @@
 +++
 title = "SSA Student App"
-weight = 1
+weight = 3
 [taxonomies]
 tags = [ "iOS", "SwiftUI", "project", "howto" ]
 +++
