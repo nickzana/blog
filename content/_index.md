@@ -1,7 +1,4 @@
 +++
-template = "blog.html"
-page_template = "blog-post.html"
+template = "landing.html"
 sort_by = "date"
 +++
-
-## Blog
