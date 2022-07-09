@@ -23,7 +23,7 @@ What I really want is a system that works like so:
 
 ### My Solution
 
-I came upon this when, earlier today, my [friend](https://sambhav.saggis.com/en) sent me a [link](https://nnw.ranchero.com/2021/04/11/how-to-help.html) to the NetNewsWire TestFlight beta. Why? Turns out, [NetNewsWire 6.0](https://nnw.ranchero.com/2021/03/27/netnewswire-for-mac.html) is adding support for [FreshRSS](https://www.freshrss.org/). As far as I'm aware, this is the first iOS application to support FreshRSS. Several months back, when I attempted to meet the above requirements, I could not get a working docker container to expose an API to clients that supported the second and third requirements. However, upon seeing the above news, I gave FreshRSS another hard look.
+I came upon this when, earlier today, my [friend](https://ersei.saggis.com) sent me a [link](https://nnw.ranchero.com/2021/04/11/how-to-help.html) to the NetNewsWire TestFlight beta. Why? Turns out, [NetNewsWire 6.0](https://nnw.ranchero.com/2021/03/27/netnewswire-for-mac.html) is adding support for [FreshRSS](https://www.freshrss.org/). As far as I'm aware, this is the first iOS application to support FreshRSS. Several months back, when I attempted to meet the above requirements, I could not get a working docker container to expose an API to clients that supported the second and third requirements. However, upon seeing the above news, I gave FreshRSS another hard look.
 
 An hour of searching and a few config files later, I ended up with the following setup:
 
