@@ -107,8 +107,8 @@ We can generate a new token. Thanks to the experimental API, we can limit the
 permissions of this token so that it doesn't have access to other SourceHut
 services, like git hosting or profile management. As of writing, the permission
 that it needs is the `meta.sr.ht/PROFILE:RO` permission. This seems like a
-strange permission for access to the `chat.src.ht` service, so I'd venture to
-guess that this permission will change as the `chat.src.ht` service improves, or
+strange permission for access to the `chat.sr.ht` service, so I'd venture to
+guess that this permission will change as the `chat.sr.ht` service improves, or
 the `OAuth 2.0` API comes out of beta. I strongly recommend checking the
 [official quick start guide](https://man.sr.ht/chat.sr.ht/quickstart.md) to see
 if this is still the case. As of writing, the direct link to generate a new
@@ -130,7 +130,7 @@ something like this:
 
 ```
 nickname your_irc_nickname
-address chat.src.ht
+address chat.sr.ht
 username your_sourcehut_username
 password "your_sourcehut_personal_access_token"
 ```
@@ -145,7 +145,7 @@ You can finally launch `senpai` with the `senpai` command. Type `/HELP` to get
 usage instructions for `senpai`, or view [the man
 page](https://git.sr.ht/~taiite/senpai/tree/master/item/doc/senpai.1.scd). Below
 is an example of adding `irc.libera.chat` as a network. I switch to the
-automatically-created `BUFFER 1`, which is an IRC chat with the `chat.src.ht`
+automatically-created `BUFFER 1`, which is an IRC chat with the `chat.sr.ht`
 `BouncerServ` interface, which allows you to configure your bouncer. This is
 essentially an interface to configure your `soju` user.  Details can, of course,
 be found by looking at the `soju` [man
@@ -184,7 +184,7 @@ To secure my nickname, I'll generate a `CertFP` self-signed certificate for the
 /BUFFER 1
 ```
 ```
-nickzana	certfp generate -key-type ed25519 libera
+nickzana	certfp generate -key-type ed25519 -network libera
 BouncerServ	certificated generated
 BouncerServ	SHA-1 fingerprint: ...
 BouncerServ	SHA-256 fingerprint: ...
@@ -203,7 +203,7 @@ And, per the [libera.chat guide](https://libera.chat/guides/certfp), register my
 certificate fingerprint with my account:
 
 ```
-/msg NickServ CERT ADD
+/msg NickServ CERT ADD your_sha512_fingerprint
 NickServ:	Added fingerprint ... to your fingerprint list.
 ```
 
