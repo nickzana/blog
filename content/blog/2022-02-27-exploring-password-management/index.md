@@ -10,9 +10,9 @@ complicated management schemes like password managers and a fair bit of
 diligence. At the same time, passwords are used so frequently that it's most
 practical to have access to all of your passwords on every device.
 
-On the other hand, password breaches are so commonplace that just about anyone
-who's used the internet in the past 20 years has probably had one compromised.
-While efforts to supplement and displace passwords as the standard form of
+Further, password breaches are so commonplace that just about anyone who's used
+the internet in the past 20 years has probably had one compromised.  While
+efforts to supplement and displace passwords as the standard form of
 authentication are slowly gaining traction, it's inevitable that passwords are
 going to remain a core part of digital security for the foreseeable future.
 
@@ -25,12 +25,11 @@ In this post, I'll be talking about the password managers I've used and
 recommend. Then, I'll outline the properties a good password manager should
 have. Finally, I'll introduce a project I've been working on related to this.
 
-As a small disclaimer, I'm not a cryptographer. My formal training essentially
+As a small disclaimer, I'm not a cryptographer. My "formal" training essentially
 boils down to a few first-year intro to CS classes in I took this year in
-college. However, I have spent the last few years of my life researching
-privacy and digital security. So, while I'll be talking a lot about different
-password managers, remember that the best password manager for you is the one
-that you fully understand.
+college. So, while I'll be talking a lot about different password managers,
+remember that the best password manager for you is the one that you fully
+understand.
 
 ## You Should Just Use a Password Manager
 
@@ -50,11 +49,11 @@ reliable cryptography.
 
 If you're more the self-hosting type, the [official Bitwarden
 server](https://github.com/bitwarden/server) is fully Open Source and available
-as a Docker image. The popular and lightweight
-[vaultwarden](https://github.com/dani-garcia/vaultwarden) is an alternative
-server implementation (written in Rust!) that's compatible with the regular
-Bitwarden client applications, making deployment for individuals, families, and
-small teams really easy.
+as a Docker image. Alternatively, the popular and lightweight
+[vaultwarden](https://github.com/dani-garcia/vaultwarden) is a Bitwarden server
+implementation (written in Rust!) that's compatible with the regular Bitwarden
+client applications, making deployment for individuals, families, and small
+teams really easy.
 
 Don't like the cloud? [KeePassXC](https://keepassxc.org/) is a Free Software
 application that provides a local password database with various additional
@@ -81,10 +80,9 @@ password manager. At this point, I switched to KeePassXC. It works very well,
 and is probably the most sensible solution for most QubesOS users or those who
 otherwise prefer an entirely local solution.
 
-I stuck with KeePassXC for the entire time that I used QubesOS... until today.
-In an effort to eliminate as many GUI applications as possible from my machine,
-I've been occasionally thinking about other offline options that worked from the
-terminal.
+Recently, in an effort to eliminate as many GUI applications as possible from my
+machine, I've been occasionally thinking about other offline password manager
+options that worked from the terminal.
 
 It wasn't until I happened to read a few blog posts by [Filippo
 Valsorda](https://filippo.io/) that the idea for a real alternative began to
@@ -108,8 +106,8 @@ manager"](https://www.passwordstore.org/). `pass` is actually a very clever
 script run through the command line that stores passwords at `~/.password-store`
 as a tree of normal directories and files.
 
-For example, from the [`pass`](https://www.passwordstore.org/) website, it could
-look something like this:
+For example, from the [`pass`](https://www.passwordstore.org/) website, the
+directory could look something like this:
 
 ```
 Password Store
@@ -125,12 +123,12 @@ Password Store
     └── mobilephone
 ```
 
-Each of those files contains [`gpg`](https://www.gnupg.org/)-encrypted password
-for the website. They're accessed by using the `pass` command to decrypt the
-files with a `gpg` private key. However, I strongly dislike the idea of relying
-on `gpg` to protect my passwords. While I do have a PGP key, I avoid using it
-whenever there's a more suitable alternative available. [Many cryptographers
-have written about the issues with
+Each of those files contains a [`gpg`](https://www.gnupg.org/)-encrypted
+password for the website. They're accessed by using the `pass` command to
+decrypt the files with a `gpg` private key. However, I strongly dislike the idea
+of relying on `gpg` to protect my passwords. While I do have a PGP key, I avoid
+using it whenever there's a more suitable alternative available. [Many
+cryptographers have written about the issues with
 PGP](https://latacora.micro.blog/2019/07/16/the-pgp-problem.html), but the
 biggest concern for me is the number of foot-guns with the PGP protocol and
 `gpg` tool. Even in a standard configuration like `pass`, where I'm offloading
@@ -145,10 +143,10 @@ opinion, the perfect encryption tool to be used with `pass`.
 
 ### Confidentiality
 
-The most obviously-essential property of a password manager is to make sure that
-nobody else can read your passwords. There are several types of adversary your
-password manager needs to protect against, but it primarily boils down to
-protecting your passwords even if someone gains access to your encrypted
+The most obviously-essential property of a password manager is to make sure
+that nobody can read its contents without the keys. There are several types of
+adversary a password manager needs to protect against, but it primarily boils
+down to protecting its passwords even if someone gains access to your encrypted
 password database.
 
 You should be able to post your encrypted database on your blog or send it to
@@ -191,11 +189,11 @@ into an innocuous pop-up you didn't notice, to completely compromise yourself.
 ### Resiliency
 
 You aren't the only one who needs access to your accounts. Should something
-happen to you, or some other unforeseen situation comes up, there needs to be a
-"break glass in case of emergency" -- without compromising on the password
-manager's fundamental security properties. With password managers, this often
-comes in the form of some adaptation of "Emergency Access." Essentially, the
-idea is to provide a trusted party or parties with enough information to,
+happen to you, or some other unforeseen situation come up, there needs to be a
+"break glass in case of emergency" option -- without compromising on the
+password manager's fundamental security properties. With password managers, this
+often comes in the form of some adaptation of "Emergency Access." Essentially,
+the idea is to provide a trusted party or parties with enough information to,
 individually or collectively, gain access to some or all of your encrypted data.
 
 Bitwarden has the concept of "Trusted Emergency Contacts" in their ["Emergency
