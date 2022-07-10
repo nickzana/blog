@@ -1,0 +1,23 @@
+image: openbsd/latest
+packages:
+  - zola
+sources:
+  - https://git.sr.ht/~nickzana/blog
+secrets:
+  - 55035670-fa32-4d43-ae48-6cb4651224b8
+environment:
+  deploy: public@nickzana.dev:/
+tasks:
+  - build: |
+      cd blog
+      zola build
+  - deploy: |
+      cd blog
+      # only deploy when on master branch
+      if [ "$(git rev-parse --abbrev-ref HEAD)" == "master" ]; then
+        sshopts="ssh -p 221 -o StrictHostKeyChecking=no"
+        openrsync --rsh="$sshopts" --delete -r public $deploy
+      else
+        echo "Skipping: not on master branch"
+        complete-build;
+      fi
