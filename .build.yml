@@ -14,7 +14,7 @@ tasks:
   - deploy: |
       cd blog
       # only deploy when on master branch
-      if [ "$(git rev-parse --abbrev-ref HEAD)" == "master" ]; then
+      if [ "$(git rev-parse master)" == "$(git rev-parse HEAD)" ]; then
         sshopts="ssh -p 221 -o StrictHostKeyChecking=no"
         openrsync --rsh="$sshopts" --delete -r public $deploy
       else
