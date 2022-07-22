@@ -16,7 +16,7 @@ tasks:
       # only deploy when on master branch
       if [ "$(git rev-parse master)" == "$(git rev-parse HEAD)" ]; then
         sshopts="ssh -p 221 -o StrictHostKeyChecking=no"
-        openrsync --rsh="$sshopts" --delete -r public $deploy
+        openrsync --rsh="$sshopts" --delete -r public/ $deploy
       else
         echo "Skipping: not on master branch"
         complete-build;
