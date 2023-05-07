@@ -14,7 +14,7 @@ external_links_target_blank = true
 [extra]
 nav = [
   { name = "Home", path = "/" },
-  { name = "Gitea", path = "https://git.nickzana.dev" },
+  { name = "Git Forge", path = "https://git.nickzana.dev" },
   { name = "Feed", path = "/atom.xml" },
   { name = "About", path = "/about/" },
 ]
