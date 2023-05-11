@@ -2,6 +2,6 @@
 template = "page.html"
 +++
 
+[Git Forge](https://git.nickzana.dev)
 [GitHub](https://github.com/nickzana)
-[Gitea](https://git.nickzana.dev)
 [Email](mailto:me@nickzana.dev)
