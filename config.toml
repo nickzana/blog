@@ -3,7 +3,6 @@ base_url = "/"
 theme = "zola-private-dev-blog"
 taxonomies = [ { name = "tags", feed = true } ]
 generate_feed = true
-compile_sass = true
 build_search_index = false
 
 highlight_code = true
